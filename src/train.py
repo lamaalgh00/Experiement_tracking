@@ -28,8 +28,8 @@ def main(use_mlflow=True):
         os.environ.setdefault("MLFLOW_TRACKING_URI", os.path.abspath("./mlruns"))
         with mlflow.start_run():
             mlflow.log_param("model", "RandomForestClassifier")
-            mlflow.log_param("n_estimators", 200) # 100 , 150 , 200
-            mlflow.log_param("max_depth", 15) # 5 , 10 , 15
+            mlflow.log_param("n_estimators", 100) # 100 , 150 , 200
+            mlflow.log_param("max_depth", 5) # 5 , 10 , 15
             model.fit(X_train, y_train)
             preds = model.predict(X_test)
             acc = accuracy_score(y_test, preds)
